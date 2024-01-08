@@ -2,6 +2,7 @@ package antoniogiovanni.marchese.u5w1l1.config;
 
 
 import antoniogiovanni.marchese.u5w1l1.entities.Drink;
+import antoniogiovanni.marchese.u5w1l1.entities.Menu;
 import antoniogiovanni.marchese.u5w1l1.entities.Pizza;
 import antoniogiovanni.marchese.u5w1l1.entities.Topping;
 import org.springframework.context.annotation.Bean;
@@ -97,4 +98,22 @@ public class BeansConfiguration {
         return d;
     }
 
+    @Bean(name = "menu")
+    public Menu menu(){
+        Menu menu = new Menu();
+        menu.addPizza(margherita());
+        menu.addPizza(hawaiianPizza());
+        menu.addPizza(salamiPizza());
+
+        menu.addTopping(cheese());
+        menu.addTopping(ham());
+        menu.addTopping(onions());
+        menu.addTopping(pineapple());
+        menu.addTopping(salami());
+
+        menu.addDrink(lemonade());
+        menu.addDrink(water());
+        menu.addDrink(wine());
+        return menu;
+    }
 }

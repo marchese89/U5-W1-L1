@@ -17,7 +17,7 @@ public class Pizza extends MenuItem{
         cheese.setPrice(0.6);
         cheese.setKCalories(300);
         ingredients.add(cheese);
-        setName("Margherita");
+        setName("Pizza Margherita");
         setPrice(4.99);
         setKCalories(1104);
     }
@@ -29,7 +29,7 @@ public class Pizza extends MenuItem{
             sb.append(t.getName()+", ");
         }
         String ingred = sb.toString();
-        return "Pizza Margherita ("+ ingred.substring(0, ingred.length() - 2)+")";
+        return getName()+" ("+ ingred.substring(0, ingred.length() - 2)+")";
     }
 
     public void addTopping(Topping t){
